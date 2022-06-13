@@ -1,0 +1,16 @@
+{
+	"namespace": "SaveEditor",
+	"displayName": "SaveEditor",
+	"version": "1.0.0",
+	"synchronyVersion": "3.0.0",
+	"description": "No description given.",
+	"author": "Nixill",
+	"dependencies": {},
+	"api": {
+		"scriptPath": "scripts"
+	},
+	"icon": "SaveEditorIcon.png",
+	"banner": "SaveEditorBanner.png",
+	"tags": [],
+	"name": "SaveEditor"
+}
