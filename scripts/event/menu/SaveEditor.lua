@@ -40,16 +40,16 @@ Event.menu.add("menuSaveEditor", "SaveEditor_editor", function(ev)
       label = L("Enemies for training", "enemyTraining"),
       action = function() Menu.open("SaveEditor_enemyTraining") end
     },
-    -- {
-    --   id = "itemUsed",
-    --   label = "Used items",
-    --   action = function() Menu.open("SaveEditor_itemUsed") end
-    -- },
-    -- {
-    --   id = "extraMode",
-    --   label = "Extra modes",
-    --   action = function() Menu.open("SaveEditor_extraMode") end
-    -- },
+    {
+      id = "itemUsed",
+      label = "Used items",
+      action = function() Menu.open("SaveEditor_itemUsed") end
+    },
+    {
+      id = "extraMode",
+      label = "Extra modes",
+      action = function() Menu.open("SaveEditor_extraMode") end
+    },
     {
       height = 0
     },

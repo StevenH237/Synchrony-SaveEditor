@@ -13,9 +13,9 @@ local function getProgressionState()
     EntityOrder = {}
 
     for _, entity in Entities.prototypesWithComponents({ "itemUnlockOnPickup" }) do
-      if entity.itemUnlockOnPickup. then
+      if entity.itemUnlockOnPickup.key == entity.name then
         ProgressionState[entity.name] = {
-          state = Progression.isUnlocked(Progression.UnlockType.ITEM_POOL, entity.name),
+          state = Progression.isUnlocked(Progression.UnlockType.ITEM_USED, entity.name),
           name = entity.friendlyName.name
         }
         EntityOrder[#EntityOrder + 1] = entity
@@ -30,7 +30,7 @@ end
 
 local function saveProgressionState()
   for entity, state in pairs(ProgressionState) do
-    Progression.setUnlocked(Progression.UnlockType.ITEM_POOL, entity, state.state)
+    Progression.setUnlocked(Progression.UnlockType.ITEM_USED, entity, state.state)
   end
 
   ProgressionState = nil
@@ -76,7 +76,7 @@ local function doneAction()
   Menu.close()
 end
 
-Event.menu.add("menuSaveItemPoolEditor", "SaveEditor_itemUsed", function(ev)
+Event.menu.add("menuSaveItemUsedEditor", "SaveEditor_itemUsed", function(ev)
   local menu = {}
   local entries = {}
 
@@ -118,7 +118,7 @@ Event.menu.add("menuSaveItemPoolEditor", "SaveEditor_itemUsed", function(ev)
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = "Lobby NPCs"
+  menu.label = "Used Items"
   menu.escapeAction = doneAction
 
   ev.menu = menu

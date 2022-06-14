@@ -119,7 +119,7 @@ Event.menu.add("menuSaveItemPoolEditor", "SaveEditor_itemPool", function(ev)
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = "Lobby NPCs"
+  menu.label = "Single-zone Item Pool"
   menu.escapeAction = doneAction
 
   ev.menu = menu
