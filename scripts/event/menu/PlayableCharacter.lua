@@ -3,6 +3,8 @@ local Event       = require "necro.event.Event"
 local Menu        = require "necro.menu.Menu"
 local Progression = require "necro.game.system.Progression"
 
+local KeyBank = require "SaveEditor.i18n.KeyBank"
+
 local ProgressionState = nil
 
 local function getProgressionState()
@@ -140,13 +142,13 @@ Event.menu.add("menuSavePlayerEditor", "SaveEditor_playableCharacter", function(
 
   entries[#entries + 1] = {
     id = "_done",
-    label = "Close",
+    label = KeyBank.Back,
     action = doneAction
   }
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = "Playable characters"
+  menu.label = L("Playable characters", "playableCharacterTitle")
   menu.escapeAction = doneAction
 
   ev.menu = menu

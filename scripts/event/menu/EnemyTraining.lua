@@ -7,6 +7,8 @@ local Menu               = require "necro.menu.Menu"
 local Progression        = require "necro.game.system.Progression"
 local TextFormat         = require "necro.config.i18n.TextFormat"
 
+local KeyBank = require "SaveEditor.i18n.KeyBank"
+
 local ProgressionState = nil
 local EnemyOrder = nil
 local MinibossOrder = nil
@@ -115,13 +117,13 @@ Event.menu.add("menuSaveEnemyTrainingEditor", "SaveEditor_enemyTraining", functi
 
   entries[1] = {
     id = "_selectAll",
-    label = L("Select all", "selectAll"),
+    label = KeyBank.SelectAll,
     action = selectAll
   }
 
   entries[2] = {
     id = "_deselectAll",
-    label = L("Deselect all", "deselectAll"),
+    label = KeyBank.DeselectAll,
     action = deselectAll
   }
 
@@ -144,7 +146,7 @@ Event.menu.add("menuSaveEnemyTrainingEditor", "SaveEditor_enemyTraining", functi
 
   entries[5] = {
     id = "_enemies",
-    label = TextFormat.underline(L("Enemies", "enemies")),
+    label = TextFormat.underline(L("Enemies", "enemiesHeader")),
     action = function() end,
     leftAction = function() Menu.selectByID("_bosses") end,
     rightAction = function() Menu.selectByID("_minibosses") end
@@ -166,7 +168,7 @@ Event.menu.add("menuSaveEnemyTrainingEditor", "SaveEditor_enemyTraining", functi
 
   entries[#entries + 1] = {
     id = "_minibosses",
-    label = TextFormat.underline(L("Minibosses", "minibosses")),
+    label = TextFormat.underline(L("Minibosses", "minibossesHeader")),
     action = function() end,
     leftAction = function() Menu.selectByID("_enemies") end,
     rightAction = function() Menu.selectByID("_bosses") end
@@ -188,7 +190,7 @@ Event.menu.add("menuSaveEnemyTrainingEditor", "SaveEditor_enemyTraining", functi
 
   entries[#entries + 1] = {
     id = "_bosses",
-    label = TextFormat.underline(L("Bosses", "bosses")),
+    label = TextFormat.underline(L("Bosses", "bossesHeader")),
     action = function() end,
     leftAction = function() Menu.selectByID("_minibosses") end,
     rightAction = function() Menu.selectByID("_enemies") end
@@ -210,13 +212,13 @@ Event.menu.add("menuSaveEnemyTrainingEditor", "SaveEditor_enemyTraining", functi
 
   entries[#entries + 1] = {
     id = "_done",
-    label = "Close",
+    label = KeyBank.Back,
     action = doneAction
   }
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = "Lobby NPCs"
+  menu.label = L("Enemies for training", "enemyTrainingTitle")
   menu.escapeAction = doneAction
 
   ev.menu = menu

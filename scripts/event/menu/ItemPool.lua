@@ -4,6 +4,8 @@ local Menu        = require "necro.menu.Menu"
 local Progression = require "necro.game.system.Progression"
 local TextFormat  = require "necro.config.i18n.TextFormat"
 
+local KeyBank = require "SaveEditor.i18n.KeyBank"
+
 local ProgressionState = nil
 local EntityOrder = nil
 
@@ -85,13 +87,13 @@ Event.menu.add("menuSaveItemPoolEditor", "SaveEditor_itemPool", function(ev)
 
   entries[1] = {
     id = "_selectAll",
-    label = L("Select all", "selectAll"),
+    label = KeyBank.SelectAll,
     action = selectAll
   }
 
   entries[2] = {
     id = "_deselectAll",
-    label = L("Deselect all", "deselectAll"),
+    label = KeyBank.DeselectAll,
     action = deselectAll
   }
 
@@ -113,13 +115,13 @@ Event.menu.add("menuSaveItemPoolEditor", "SaveEditor_itemPool", function(ev)
 
   entries[#entries + 1] = {
     id = "_done",
-    label = "Close",
+    label = KeyBank.Back,
     action = doneAction
   }
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = "Single-zone Item Pool"
+  menu.label = L("Single-zone Item Pool", "itemPoolTitle")
   menu.escapeAction = doneAction
 
   ev.menu = menu

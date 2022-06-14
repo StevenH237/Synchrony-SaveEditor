@@ -13,7 +13,7 @@ end
 
 CustomActions.registerSystemAction {
   id = "openEditor",
-  name = "Open save editor",
+  name = L("Open save editor", "saveEditorControl"),
   keyBinding = { "lcontrol + e" },
   callback = function() openMenu() end,
   enableIf = function(pid)

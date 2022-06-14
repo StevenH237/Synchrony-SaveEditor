@@ -42,12 +42,12 @@ Event.menu.add("menuSaveEditor", "SaveEditor_editor", function(ev)
     },
     {
       id = "itemUsed",
-      label = "Used items",
+      label = L("Used items", "usedItems"),
       action = function() Menu.open("SaveEditor_itemUsed") end
     },
     {
       id = "extraMode",
-      label = "Extra modes",
+      label = L("Extra modes", "extraModes"),
       action = function() Menu.open("SaveEditor_extraMode") end
     },
     {
