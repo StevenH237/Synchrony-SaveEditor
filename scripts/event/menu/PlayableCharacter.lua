@@ -6,10 +6,12 @@ local Progression = require "necro.game.system.Progression"
 local KeyBank = require "SaveEditor.i18n.KeyBank"
 
 local ProgressionState = nil
+local EntityOrder = nil
 
 local function getProgressionState()
   if ProgressionState == nil then
     ProgressionState = {}
+    EntityOrder = {}
 
     for _, entity in Entities.prototypesWithComponents({ "playableCharacter" }) do
       local newPlayer = {
@@ -48,7 +50,10 @@ local function getProgressionState()
 
       ::nextEntity::
       ProgressionState[entity.name] = newPlayer
+      EntityOrder[#EntityOrder + 1] = entity
     end
+
+    table.sort(EntityOrder, function(a, b) return a.friendlyName.name < b.friendlyName.name end)
   end
 
   return ProgressionState
@@ -71,6 +76,7 @@ local function saveProgressionState()
   end
 
   ProgressionState = nil
+  EntityOrder = nil
 end
 
 local function label(entity)
@@ -126,7 +132,8 @@ Event.menu.add("menuSavePlayerEditor", "SaveEditor_playableCharacter", function(
 
   local state = getProgressionState()
 
-  for entity in pairs(state) do
+  for _, entityPT in pairs(EntityOrder) do
+    local entity = entityPT.name
     entries[#entries + 1] = {
       id = entity,
       label = label(entity),
@@ -148,7 +155,7 @@ Event.menu.add("menuSavePlayerEditor", "SaveEditor_playableCharacter", function(
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = L("Playable characters", "playableCharacterTitle")
+  menu.label = KeyBank.PlayableCharacter
   menu.escapeAction = doneAction
 
   ev.menu = menu

@@ -56,8 +56,10 @@ local function label(entity)
 end
 
 local function action(entity)
+  local name = entity.name
   return function()
-    local state = getProgressionState()[entity]
+    print(name)
+    local state = getProgressionState()[name]
     state.state = not state.state
   end
 end
@@ -103,7 +105,7 @@ Event.menu.add("menuSaveItemPoolEditor", "SaveEditor_itemPool", function(ev)
 
   for _, entity in ipairs(EntityOrder) do
     entries[#entries + 1] = {
-      id = entity,
+      id = entity.name,
       label = label(entity),
       action = action(entity)
     }
@@ -121,7 +123,7 @@ Event.menu.add("menuSaveItemPoolEditor", "SaveEditor_itemPool", function(ev)
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = L("Single-zone Item Pool", "itemPoolTitle")
+  menu.label = KeyBank.ItemPool
   menu.escapeAction = doneAction
 
   ev.menu = menu

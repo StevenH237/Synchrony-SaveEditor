@@ -95,7 +95,7 @@ Event.menu.add("menuSaveNPCEditor", "SaveEditor_lobbyNPC", function(ev)
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = "Lobby NPCs"
+  menu.label = KeyBank.LobbyNPC
   menu.escapeAction = doneAction
 
   ev.menu = menu

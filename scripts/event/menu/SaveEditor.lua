@@ -2,6 +2,8 @@ local Event       = require "necro.event.Event"
 local GameSession = require "necro.client.GameSession"
 local Menu        = require "necro.menu.Menu"
 
+local KeyBank = require "SaveEditor.i18n.KeyBank"
+
 local announce = true
 
 local function exitAndRefresh()
@@ -17,37 +19,37 @@ Event.menu.add("menuSaveEditor", "SaveEditor_editor", function(ev)
   local entries = {
     {
       id = "playableCharacter",
-      label = L("Playable characters and zones", "playableCharacter"),
+      label = KeyBank.PlayableCharacter,
       action = function() Menu.open("SaveEditor_playableCharacter") end
     },
     {
       id = "lobbyNPC",
-      label = L("Lobby NPCs", "lobbyNPC"),
+      label = KeyBank.LobbyNPC,
       action = function() Menu.open("SaveEditor_lobbyNPC") end
     },
     {
       id = "itemGrantPermanent",
-      label = L("Permanent upgrades", "itemGrantPermanent"),
+      label = KeyBank.ItemGrantPermanent,
       action = function() Menu.open("SaveEditor_itemGrantPermanent") end
     },
     {
       id = "itemPool",
-      label = L("Unlocked items", "itemPool"),
+      label = KeyBank.ItemPool,
       action = function() Menu.open("SaveEditor_itemPool") end
     },
     {
       id = "enemyTraining",
-      label = L("Enemies for training", "enemyTraining"),
+      label = KeyBank.EnemyTraining,
       action = function() Menu.open("SaveEditor_enemyTraining") end
     },
     {
       id = "itemUsed",
-      label = L("Used items", "usedItems"),
+      label = KeyBank.ItemUsed,
       action = function() Menu.open("SaveEditor_itemUsed") end
     },
     {
       id = "extraMode",
-      label = L("Extra modes", "extraModes"),
+      label = KeyBank.ExtraModes,
       action = function() Menu.open("SaveEditor_extraMode") end
     },
     {

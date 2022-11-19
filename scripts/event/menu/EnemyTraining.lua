@@ -218,7 +218,7 @@ Event.menu.add("menuSaveEnemyTrainingEditor", "SaveEditor_enemyTraining", functi
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = L("Enemies for training", "enemyTrainingTitle")
+  menu.label = KeyBank.EnemyTraining
   menu.escapeAction = doneAction
 
   ev.menu = menu

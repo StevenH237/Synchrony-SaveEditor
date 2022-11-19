@@ -3,14 +3,17 @@
 	"displayName": "SaveEditor",
 	"version": "1.0.0",
 	"synchronyVersion": "3.0.0",
-	"description": "No description given.",
+	"description": "Editor for singleplayer progression state",
 	"author": "Nixill",
 	"dependencies": {},
-	"api": {
-		"scriptPath": "scripts"
-	},
+	"api": {"scriptPath":"scripts"},
 	"icon": "SaveEditorIcon.png",
 	"banner": "SaveEditorBanner.png",
 	"tags": [],
-	"name": "SaveEditor"
+	"name": "SaveEditor_io_2258364",
+	"homepageURL": "https://mod.io/g/crypt/m/saveeditor",
+	"modioID": "2258364",
+	"modioUserID": 12939888,
+	"pendingVersion": "1.0.0",
+	"visibility": 0
 }

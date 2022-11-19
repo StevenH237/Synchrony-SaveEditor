@@ -120,7 +120,7 @@ Event.menu.add("menuSaveItemUsedEditor", "SaveEditor_itemUsed", function(ev)
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = L("Used Items", "itemUsedTitle")
+  menu.label = KeyBank.ItemUsed
   menu.escapeAction = doneAction
 
   ev.menu = menu

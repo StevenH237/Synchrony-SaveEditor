@@ -91,7 +91,7 @@ Event.menu.add("menuSaveExtraModeEditor", "SaveEditor_extraMode", function(ev)
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = L("Extra modes", "extraModeTitle")
+  menu.label = KeyBank.ExtraModes
   menu.escapeAction = doneAction
 
   ev.menu = menu

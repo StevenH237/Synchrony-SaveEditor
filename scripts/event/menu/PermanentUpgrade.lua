@@ -183,7 +183,7 @@ Event.menu.add("menuSaveProgressionEditor", "SaveEditor_itemGrantPermanent", fun
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = L("Lobby NPCs", "permanentUpgradeTitle")
+  menu.label = KeyBank.ItemGrantPermanent
   menu.escapeAction = doneAction
 
   ev.menu = menu
