@@ -14,9 +14,9 @@ end
 CustomActions.registerSystemAction {
   id = "openEditor",
   name = L("Open save editor", "saveEditorControl"),
-  keyBinding = { "lcontrol + e" },
-  callback = function() openMenu() end,
-  enableIf = function(pid)
+  keyBinding = { "Ctrl + Y" },
+  callback = openMenu,
+  enableIf = function()
     return GameSession.getCurrentModeID() == "Lobby"
   end
 }
