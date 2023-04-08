@@ -11,5 +11,7 @@ module.ItemPool = L("Unlocked single-zone items", "itemPool")
 module.ItemUsed = L("Used items", "itemUsed")
 module.LobbyNPC = L("Lobby NPCs", "lobbyNPC")
 module.PlayableCharacter = L("Playable characters", "playableCharacter")
+module.Debug = L("Debug progression", "debug")
+module.SaveEditor = L("Save Editor", "saveEditorTitle")
 
 return module

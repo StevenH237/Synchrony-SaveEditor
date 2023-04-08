@@ -1,6 +1,7 @@
 local Event       = require "necro.event.Event"
 local GameSession = require "necro.client.GameSession"
 local Menu        = require "necro.menu.Menu"
+local Progression = require "necro.game.system.Progression"
 
 local KeyBank = require "SaveEditor.i18n.KeyBank"
 
@@ -55,6 +56,18 @@ Event.menu.add("menuSaveEditor", "SaveEditor_editor", function(ev)
     {
       height = 0
     },
+    -- {
+    --   id = "debug",
+    --   label = KeyBank.Debug,
+    --   action = function()
+    --     for k, v in pairs(Progression.UnlockType) do
+    --       print(Progression.getAllUnlocks(v))
+    --     end
+    --   end
+    -- },
+    -- {
+    --   height = 0
+    -- },
     {
       id = "_done",
       label = L("Close and restart lobby", "restartLobby"),
@@ -63,7 +76,7 @@ Event.menu.add("menuSaveEditor", "SaveEditor_editor", function(ev)
   }
 
   menu.entries = entries
-  menu.label = L("Save Editor", "saveEditorTitle")
+  menu.label = KeyBank.SaveEditor
   menu.escapeAction = exitAndRefresh
   ev.menu = menu
 end)
