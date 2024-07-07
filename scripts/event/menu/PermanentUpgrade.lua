@@ -4,7 +4,7 @@ local Menu        = require "necro.menu.Menu"
 local Progression = require "necro.game.system.Progression"
 local TextFormat  = require "necro.config.i18n.TextFormat"
 
-local KeyBank = require "SaveEditor.i18n.KeyBank"
+local Text = require "SaveEditor.i18n.Text"
 
 local ProgressionEntities = nil
 local ProgressionStats    = nil
@@ -177,13 +177,13 @@ Event.menu.add("menuSaveProgressionEditor", "SaveEditor_itemGrantPermanent", fun
 
   entries[#entries + 1] = {
     id = "_done",
-    label = KeyBank.Back,
+    label = Text.Back,
     action = doneAction
   }
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = KeyBank.ItemGrantPermanent
+  menu.label = Text.ItemGrantPermanent
   menu.escapeAction = doneAction
 
   ev.menu = menu

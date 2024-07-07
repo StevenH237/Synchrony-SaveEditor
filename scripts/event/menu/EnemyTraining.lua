@@ -7,7 +7,7 @@ local Menu               = require "necro.menu.Menu"
 local Progression        = require "necro.game.system.Progression"
 local TextFormat         = require "necro.config.i18n.TextFormat"
 
-local KeyBank = require "SaveEditor.i18n.KeyBank"
+local Text = require "SaveEditor.i18n.Text"
 
 local ProgressionState = nil
 local EnemyOrder = nil
@@ -117,13 +117,13 @@ Event.menu.add("menuSaveEnemyTrainingEditor", "SaveEditor_enemyTraining", functi
 
   entries[1] = {
     id = "_selectAll",
-    label = KeyBank.SelectAll,
+    label = Text.SelectAll,
     action = selectAll
   }
 
   entries[2] = {
     id = "_deselectAll",
-    label = KeyBank.DeselectAll,
+    label = Text.DeselectAll,
     action = deselectAll
   }
 
@@ -212,13 +212,13 @@ Event.menu.add("menuSaveEnemyTrainingEditor", "SaveEditor_enemyTraining", functi
 
   entries[#entries + 1] = {
     id = "_done",
-    label = KeyBank.Back,
+    label = Text.Back,
     action = doneAction
   }
 
   menu.entries = entries
   menu.searchable = true
-  menu.label = KeyBank.EnemyTraining
+  menu.label = Text.EnemyTraining
   menu.escapeAction = doneAction
 
   ev.menu = menu

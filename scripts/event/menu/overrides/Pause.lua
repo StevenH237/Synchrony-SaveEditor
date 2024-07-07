@@ -3,7 +3,7 @@ local Menu         = require "necro.menu.Menu"
 local GameSession  = require "necro.client.GameSession"
 local SinglePlayer = require "necro.client.SinglePlayer"
 
-local KeyBank = require "SaveEditor.i18n.KeyBank"
+local Text = require "SaveEditor.i18n.Text"
 
 Event.menu.override("pause", 1, function(func, ev)
   -- Run regular menu event first
@@ -28,7 +28,7 @@ Event.menu.override("pause", 1, function(func, ev)
   -- Add save editor entry
   table.insert(ev.menu.entries, customize + 1, {
     id = "debug",
-    label = KeyBank.SaveEditor,
+    label = Text.SaveEditor,
     action = function()
       Menu.open("SaveEditor_editor")
     end,

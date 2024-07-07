@@ -3,7 +3,7 @@ local GameSession = require "necro.client.GameSession"
 local Menu        = require "necro.menu.Menu"
 local Progression = require "necro.game.system.Progression"
 
-local KeyBank = require "SaveEditor.i18n.KeyBank"
+local Text = require "SaveEditor.i18n.Text"
 
 local announce = true
 
@@ -20,37 +20,37 @@ Event.menu.add("menuSaveEditor", "SaveEditor_editor", function(ev)
   local entries = {
     {
       id = "playableCharacter",
-      label = KeyBank.PlayableCharacter,
+      label = Text.PlayableCharacter,
       action = function() Menu.open("SaveEditor_playableCharacter") end
     },
     {
       id = "lobbyNPC",
-      label = KeyBank.LobbyNPC,
+      label = Text.LobbyNPC,
       action = function() Menu.open("SaveEditor_lobbyNPC") end
     },
     {
       id = "itemGrantPermanent",
-      label = KeyBank.ItemGrantPermanent,
+      label = Text.ItemGrantPermanent,
       action = function() Menu.open("SaveEditor_itemGrantPermanent") end
     },
     {
       id = "itemPool",
-      label = KeyBank.ItemPool,
+      label = Text.ItemPool,
       action = function() Menu.open("SaveEditor_itemPool") end
     },
     {
       id = "enemyTraining",
-      label = KeyBank.EnemyTraining,
+      label = Text.EnemyTraining,
       action = function() Menu.open("SaveEditor_enemyTraining") end
     },
     {
       id = "itemUsed",
-      label = KeyBank.ItemUsed,
+      label = Text.ItemUsed,
       action = function() Menu.open("SaveEditor_itemUsed") end
     },
     {
       id = "extraMode",
-      label = KeyBank.ExtraModes,
+      label = Text.ExtraModes,
       action = function() Menu.open("SaveEditor_extraMode") end
     },
     {
@@ -58,7 +58,7 @@ Event.menu.add("menuSaveEditor", "SaveEditor_editor", function(ev)
     },
     -- {
     --   id = "debug",
-    --   label = KeyBank.Debug,
+    --   label = Text.Debug,
     --   action = function()
     --     for k, v in pairs(Progression.UnlockType) do
     --       print(Progression.getAllUnlocks(v))
@@ -76,7 +76,7 @@ Event.menu.add("menuSaveEditor", "SaveEditor_editor", function(ev)
   }
 
   menu.entries = entries
-  menu.label = KeyBank.SaveEditor
+  menu.label = Text.SaveEditor
   menu.escapeAction = exitAndRefresh
   ev.menu = menu
 end)

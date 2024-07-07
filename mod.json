@@ -1,7 +1,7 @@
 {
 	"namespace": "SaveEditor",
 	"displayName": "SaveEditor",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"synchronyVersion": "3.0.0",
 	"description": "Editor for singleplayer progression state",
 	"author": "Nixill",
@@ -11,10 +11,10 @@
 	"banner": "SaveEditorBanner.png",
 	"tags": [],
 	"name": "SaveEditor_io_2258364",
-	"changelog": "- Change default keybind to \"Ctrl + Y\"\n- Minor code optimizations\n(no user-visible changes for players that already had the mod)",
+	"changelog": "",
 	"homepageURL": "https://mod.io/g/crypt/m/SaveEditor",
 	"modioID": "2258364",
 	"modioUserID": 12939888,
-	"pendingVersion": "1.1.0",
+	"pendingVersion": "1.1.1",
 	"visibility": 0
 }
